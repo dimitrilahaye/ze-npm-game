@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NPM GAME</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+        integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-tooltip@3.0.2/dist/css/bulma-tooltip.min.css">
+    <style>
+        .hide {
+            display: none;
+        }
+
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="columns">
+        <div class="column is-narrow is-full">
+            <h1 class="title is-1">Ze NPM GAME</h1>
+            <div class="block">
+                <p>
+                    Un mot au hasard va apparaître sur ton écran.
+                    <br />
+                    Dis-nous si selon toi, un package NPM existe avec un tel nom.
+                </p>
+            </div>
+            <h2 class="title is-2">Difficulté</h2>
+            <div class="block">
+                <app-difficulty difficulty='soft'></app-difficulty>
+            </div>
+            <app-score score="0"></app-score>
+            <app-word></app-word>
+            <app-yes></app-yes>
+            <app-nope></app-nope>
+            <app-loader id="result" color="black"></app-loader>
+            <app-encore></app-encore>
+            <app-retry></app-retry>
+            <app-result></app-result>
+            <app-details></app-details>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="scripts/datasource/npm.datasource.js"></script>
+    <script type="text/javascript" src="scripts/datasource/word.datasource.js"></script>
+    <script type="text/javascript" src="scripts/components/hideable-button.js"></script>
+    <script type="text/javascript" src="scripts/components/nope-button.js"></script>
+    <script type="text/javascript" src="scripts/components/yes-button.js"></script>
+    <script type="text/javascript" src="scripts/components/encore-button.js"></script>
+    <script type="text/javascript" src="scripts/components/result-block.js"></script>
+    <script type="text/javascript" src="scripts/components/retry-button.js"></script>
+    <script type="text/javascript" src="scripts/components/details-card.js"></script>
+    <script type="text/javascript" src="scripts/components/difficulty-radios.js"></script>
+    <script type="text/javascript" src="scripts/components/loader.js"></script>
+    <script type="text/javascript" src="scripts/components/word-block.js"></script>
+    <script type="text/javascript" src="scripts/components/score-block.js"></script>
+    <script type="text/javascript" src="scripts/presentation.js"></script>
+    <script type="text/javascript" src="scripts/game.js"></script>
+    <script type="text/javascript">
+        const game = new Game(
+            new Presentation(),
+            new WordDatasource(),
+            new NpmDatasource(),
+        );
+
+        game.start();
+    </script>
+</body>
+
+</html>
