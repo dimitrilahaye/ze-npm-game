@@ -1,12 +1,15 @@
 class Presentation {
-    word;
+    result;
     yes;
     nope;
-    result;
     encore;
+    retry;
     details;
-    resultLoader;
     difficulty;
+    word;
+    resultLoader;
+    wordLoader;
+    score;
 
     constructor() {
         this.result = document.querySelector('app-result');
