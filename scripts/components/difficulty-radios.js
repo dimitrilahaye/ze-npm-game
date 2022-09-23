@@ -16,17 +16,20 @@ class DifficultyRadios extends HTMLElement {
                 }
             </style>
             
-            <div>
-                <input type="radio" value="very-soft" name="difficulty" id="very-soft">
-                <label for="very-soft" data-tooltip="Le nom du package, sa description ou ses mots clés DOIVENT CONTENIR le mot">Very soft</label>
-            </div>
-            <div>
-                <input type="radio" value="soft" name="difficulty" id="soft">
-                <label for="soft" data-tooltip="Le nom du package DOIT CONTENIR le mot">Soft</label>
-            </div>
-            <div>
-                <input type="radio" value="hard" name="difficulty" id="hard">
-                <label for="hard" data-tooltip="Le nom du package DOIT ÊTRE IDENTIQUE au mot">Hard</label>
+            <h2 class="title is-2">Difficulté</h2>
+            <div class="block">
+                <div>
+                    <input type="radio" value="very-soft" name="difficulty" id="very-soft">
+                    <label for="very-soft" data-tooltip="Le nom du package, sa description ou ses mots clés DOIVENT CONTENIR le mot">Very soft</label>
+                </div>
+                <div>
+                    <input type="radio" value="soft" name="difficulty" id="soft">
+                    <label for="soft" data-tooltip="Le nom du package DOIT CONTENIR le mot">Soft</label>
+                </div>
+                <div>
+                    <input type="radio" value="hard" name="difficulty" id="hard">
+                    <label for="hard" data-tooltip="Le nom du package DOIT ÊTRE IDENTIQUE au mot">Hard</label>
+                </div>
             </div>
         `;
 
